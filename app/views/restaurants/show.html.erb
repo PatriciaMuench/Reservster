@@ -20,5 +20,7 @@
   <%= @restaurant.phone_number %>
 </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<% if @restaurant.user == current_user %>
+	<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<% end %>
 <%= link_to 'Back', restaurants_path %>
