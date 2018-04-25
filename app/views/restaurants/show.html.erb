@@ -23,4 +23,9 @@
 <% if @restaurant.user == current_user %>
 	<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <% end %>
+
+<%= link_to 'New Reservation', new_reservation_path %>
+
+<br /><br />
+
 <%= link_to 'Back', restaurants_path %>
