@@ -1,6 +1,14 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_customer!
+  # Is it OK not to have only or except? - yes
+
+  before_action :authorize_customer, only: [:show, :edit, :update, :destroy]
+
+  # add rules regarding users (owners) CRUD'ing reservations?
+
+
   # GET /reservations
   # GET /reservations.json
   def index

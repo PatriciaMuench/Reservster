@@ -16,8 +16,18 @@
     <% if current_user %>
   		<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 	  <% else %>
-  		<%= link_to "Sign In", new_user_session_path %>
+  		<%= link_to "Sign In as Owner", new_user_session_path %>
 	  <% end %>
+
+    |
+
+    <% if current_customer %>
+      <%= link_to "Sign Out", destroy_customer_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign In as Customer", new_customer_session_path %>
+    <% end %>
+
+    <!-- need to clarify customers not being able to sign in as owners, etc.? (by changing if/elses?) -->
 
     <%= yield %>
   </body>
