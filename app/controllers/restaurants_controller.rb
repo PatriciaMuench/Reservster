@@ -83,6 +83,7 @@ class RestaurantsController < ApplicationController
       params.require(:restaurant).permit(:name, :cuisine, :address, :phone_number)
     end
 
+    # edit notice?
     def authorize_user
       unless @restaurant.user == current_user
         redirect_to restaurants_url, notice: 'No touchy!'
