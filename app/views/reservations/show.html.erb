@@ -17,13 +17,18 @@
 
 <p>
   <strong>Restaurant:</strong>
-  <%= @reservation.restaurant %>
+  <!-- <%= @reservation.restaurant %> -->
+  <%= @reservation.restaurant_id %>
+  <!-- later try to display restaurant name? (see below) -->
 </p>
 
 <p>
   <strong>Customer:</strong>
-  <%= @reservation.customer %>
-  <!-- what about @customer_id ?? -->
+  <!-- <%= @reservation.customer %> -->
+  <!-- what about @customer_id, or customer email (or name) ?? -->
+  <!-- works: -->
+  <%= @reservation.customer_id %> 
+  <!-- '@reservation.customer_email' doesn't work; try again later? -->
 </p>
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |

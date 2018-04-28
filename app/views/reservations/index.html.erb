@@ -20,8 +20,10 @@
         <td><%= reservation.date %></td>
         <td><%= reservation.time %></td>
         <td><%= reservation.party_size %></td>
-        <td><%= reservation.restaurant %></td>
-        <td><%= reservation.customer %></td>
+        <!-- <td><%= reservation.restaurant %></td> -->
+        <td><%= reservation.restaurant_id %></td>
+        <!-- <td><%= reservation.customer %></td> -->
+        <td><%= reservation.customer_id %></td>
         <td><%= link_to 'Show', reservation %></td>
         <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
         <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,6 +31,7 @@
     <% end %>
   </tbody>
 </table>
+<!-- currently displaying restaurant and customer id's; later try to display names/email? -->
 
 <br>
 
