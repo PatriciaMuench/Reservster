@@ -25,7 +25,9 @@
           <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
           <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
-        <td><%= link_to 'New Reservation', new_reservation_path %></td>
+        <!-- <td><%= link_to 'New Reservation', new_reservation_path %></td> -->
+        <!-- does this correctly pass restaurant id to query string? -->
+        <td><%= link_to 'New Reservation', new_reservation_path(restaurant_id: restaurant.id) %></td>
       </tr>
     <% end %>
   </tbody>
