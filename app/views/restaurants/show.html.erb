@@ -24,7 +24,7 @@
 	<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <% end %>
 
-<!-- includes query string to pass info to controller (?) -->
+<!-- includes query string to pass info to controller via url -->
 <%= link_to 'New Reservation', new_reservation_path(restaurant_id: @restaurant.id)%>
 
 <br /><br />
