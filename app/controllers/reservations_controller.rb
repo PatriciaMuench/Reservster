@@ -1,3 +1,18 @@
+
+# 'Reservster' is a project I was encouraged to build during my web development classes at Startup Institute; 
+# I have used the creation of this restaurant reservation web app as an exercise to apply skills I learned in class, 
+# and to pursue further learning as I’ve added additional features. 
+# The app enables log in by two different types of users: restaurant owners, who must log in to add restaurants and can only 
+# edit their own restaurants, and customers, who must log in to make reservations and can only edit their own reservations. 
+# Each reservation is associated with both the customer who created it and the restaurant it is made at. 
+# Here in the reservations controller, you can see the definition of the different ‘CRUD’ actions for reservations 
+# (‘create, read, update, and delete’) and related functions, including authentication and authorization of customers. 
+# The identity is tracked of not only the individual reservations, but also of the customer who creates the reservation, 
+# and of the restaurant from which the customer initiates the creation of a reservation.
+# This app is a work in progress; potential future plans include specifying reservation indexes by customer and by restaurant, 
+# as well as adding and enhancing various styling, interactivity, and validation features and writing tests to run.
+
+
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
@@ -96,10 +111,12 @@ class ReservationsController < ApplicationController
     # for reference, from views/restaurants/show: 
     # <%= link_to 'New Reservation', new_reservation_path(restaurant_id: @restaurant.id)%>
 
-    # edit this?:
     def authorize_customer
       unless @reservation.customer == current_customer
         redirect_to reservations_url, notice: 'No touchy!'
+        # edit this?
       end
     end
 end
+
+
