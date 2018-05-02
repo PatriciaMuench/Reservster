@@ -32,6 +32,14 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all
   end
 
+  # trying this:
+  def customer_index
+    # if current_customer
+      @reservations = current_customer.reservations
+    # end
+    # render :index ??
+  end
+
   # GET /reservations/1
   # GET /reservations/1.json
   def show

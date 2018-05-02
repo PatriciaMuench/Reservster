@@ -6,7 +6,14 @@ Rails.application.routes.draw do
 
   get 'restaurants/:id/preview', to: 'restaurants#preview'
 
-  resources :reservations
+
+  # trying to differentiate indexes:
+  get '/reservations/customer_index', to: 'reservations#customer_index'
+  # I'm not even sure what the url structure should be or which controller these indexes should be defined in, etc (also whether they should be termed something other than index..)
+  resources :reservations do
+
+  end
+ 
 
   devise_for :users, path: 'users', controllers: { sessions: 'users/sessions' }
   # naming routes is supposed to result in: eg. http://localhost:3000/users/sign_in
